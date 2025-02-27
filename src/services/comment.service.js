@@ -53,10 +53,10 @@ export const commentService = {
         });
     },
     checkImageSaved: async function (req) {
-        const { image_id } = req.params;
+        const { id: image_id } = req.params;  
     
         if (!image_id) {
-            throw new BadRequestException("Vui lòng cung cấp image_id");
+            throw new Error("Vui lòng cung cấp image_id");
         }
     
         const comment = await prisma.comments.findFirst({

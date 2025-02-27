@@ -39,7 +39,7 @@ export const commentController = {
     },
     checkImageSaved: async function (req, res, next) {
         try {
-            const result = await commentService.checkImageSaved(req);
+            const result = await commentService.checkImageSaved(req); 
             const response = responseSuccess(result, `Check image saved successfully`);
             res.status(response.code).json(response);
         } catch (err) {
